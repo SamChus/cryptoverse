@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const WhatsNew = () => {
+const WhatsNew = () => {
   return (
     <div>WhatsNew</div>
   )
 }
+
+export default WhatsNew

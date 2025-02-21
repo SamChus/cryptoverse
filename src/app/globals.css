@@ -21,12 +21,12 @@
     --foreground: #ededed;
   }
 }
-
+/* 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 .gradient-01 {
   background-image: linear-gradient(

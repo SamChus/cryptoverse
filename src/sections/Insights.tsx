@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Insights = () => {
+const Insights = () => {
   return (
     <div>Insights</div>
   )
 }
+
+export default Insights
