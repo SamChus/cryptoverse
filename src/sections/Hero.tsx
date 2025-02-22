@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import React from 'react'
+import React from "react";
 import styles from "@/styles";
 import { motion } from "framer-motion";
-import { navVariants, staggerContainer, textVariant } from "@/utils/motion";
+import {
+  navVariants,
+  slideIn,
+  staggerContainer,
+  textVariant,
+} from "@/utils/motion";
 import Image from "next/image";
 
 const Hero = () => {
@@ -16,7 +21,7 @@ const Hero = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <div className="flex justify-center items-center flex-col relative z-10">
+        <div className="flex justify-center items-center flex-col relative z-20">
           <motion.h1
             variants={textVariant(1.1)}
             className={`${styles.heroHeading}`}
@@ -32,18 +37,34 @@ const Hero = () => {
             <h1 className={styles.heroHeading}>Ness</h1>
           </motion.div>
         </div>
-        <div className="absolute w-full h-[300px] hero-gradient rounded-top-[140px] z-[0]">
-          <Image 
-            src='/cover.png'
-            alt='cover'
-            className='w-full sm:h-[500px] h-[350px]'
+        <motion.div
+          variants={slideIn("right", "tween", "0.5", "1")}
+          className="relative sm:-mt-[32px] z-10 -mt-[18px]"
+        >
+          <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] -z-[10] -top-[30px]" />
+          <Image
+            src="/cover.png"
+            alt="cover"
+            className="w-full sm:h-[500px] h-[350px] object-cover z-10 rounded-tl-[140px]"
             width={1920}
             height={350}
           />
-        </div>
+
+          <motion.div
+            variants={slideIn("right", "tween", "1", "1")}
+          >
+            <Image
+              src="/stamp.png"
+              alt="cover"
+              className="absolute w-[200px] h-[200px] sm:-bottom-20 -bottom-10 sm:right-20 right-10"
+              width={1920}
+              height={350}
+            />
+          </motion.div>
+        </motion.div>
       </motion.div>
     </section>
   );
-}
+};
 
-export default Hero
+export default Hero;
