@@ -50,17 +50,17 @@ const Hero = () => {
             height={350}
           />
 
-          <motion.div
-            variants={slideIn("right", "tween", "1", "1")}
-          >
-            <Image
-              src="/stamp.png"
-              alt="cover"
-              className="absolute w-[200px] h-[200px] sm:-bottom-20 -bottom-10 sm:right-20 right-10"
-              width={1920}
-              height={350}
-            />
-          </motion.div>
+          <a href="#explore">
+            <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10">
+              <Image
+                src="/stamp.png"
+                alt="cover"
+                className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain"
+                width={1920}
+                height={350}
+              />
+            </div>
+          </a>
         </motion.div>
       </motion.div>
     </section>
